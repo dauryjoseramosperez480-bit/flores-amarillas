@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi mejor amiga 💛</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Georgia,serif}
+body{
+  overflow:hidden;
+  background:linear-gradient(180deg,#091526 0%,#132b3b 48%,#243d35 100%);
+  color:#fff8d6;
+}
+.stars{position:fixed;inset:0;overflow:hidden}
+.star{
+  position:absolute;width:3px;height:3px;border-radius:50%;
+  background:#fff5b5;opacity:.75;animation:twinkle 2.5s infinite alternate
+}
+@keyframes twinkle{to{opacity:.15;transform:scale(.45)}}
+.moon{
+  position:absolute;top:7%;right:9%;width:90px;height:90px;border-radius:50%;
+  background:#fff7c7;box-shadow:0 0 35px #fff0a0;
+}
+.ground{
+  position:absolute;bottom:-30px;left:-5%;width:110%;height:150px;
+  background:#142d27;border-radius:50% 50% 0 0/30% 30% 0 0;
+}
+.content{
+  position:relative;z-index:3;text-align:center;padding:10vh 22px 0;
+  max-width:900px;margin:auto;
+}
+h1{
+  margin:0;font-size:clamp(38px,7vw,76px);color:#ffe66d;
+  text-shadow:0 0 18px rgba(255,221,74,.55);
+}
+.subtitle{font-size:clamp(17px,3vw,25px);margin:12px 0 20px;color:#fffbe4}
+.card{
+  margin:auto;max-width:650px;padding:25px 28px;border-radius:24px;
+  background:rgba(10,25,35,.52);border:1px solid rgba(255,230,109,.3);
+  backdrop-filter:blur(7px);box-shadow:0 10px 35px rgba(0,0,0,.28)
+}
+.card p{font-size:clamp(17px,2.5vw,21px);line-height:1.65;margin:0}
+.flowers{position:absolute;z-index:2;bottom:35px;left:0;width:100%;height:210px}
+.flower{position:absolute;bottom:0;width:90px;height:190px;transform-origin:bottom center;animation:sway 4s ease-in-out infinite}
+.flower:nth-child(1){left:8%;animation-delay:-1s}
+.flower:nth-child(2){left:24%;animation-delay:-2.2s}
+.flower:nth-child(3){left:43%;animation-delay:-.5s}
+.flower:nth-child(4){left:62%;animation-delay:-1.8s}
+.flower:nth-child(5){left:80%;animation-delay:-3s}
+@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(4deg)}}
+.stem{position:absolute;left:44px;bottom:0;width:6px;height:125px;background:#4c8a43;border-radius:5px}
+.leaf{position:absolute;width:45px;height:18px;background:#5c9b48;border-radius:100% 0 100% 0;transform:rotate(-28deg)}
+.leaf.one{left:5px;bottom:45px}.leaf.two{left:42px;bottom:72px;transform:rotate(150deg)}
+.head{position:absolute;left:18px;bottom:105px;width:58px;height:58px}
+.petal{position:absolute;width:27px;height:42px;border-radius:50%;background:#ffd928;box-shadow:0 0 12px rgba(255,216,40,.55)}
+.p1{left:16px;top:0}.p2{left:0;top:13px;transform:rotate(-55deg)}
+.p3{right:0;top:13px;transform:rotate(55deg)}
+.p4{left:16px;bottom:0;transform:rotate(180deg)}
+.center{position:absolute;left:18px;top:18px;width:23px;height:23px;border-radius:50%;background:#8b571d}
+.note{margin-top:18px;font-size:14px;color:#e8e2bd;opacity:.9}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div class="moon"></div>
+
+<div class="content">
+  <h1>Para mi mejor amiga 💛</h1>
+  <div class="subtitle">Un pequeño detalle hecho especialmente para ti</div>
+  <div class="card">
+    <p>
+      Te regalo estas flores amarillas como símbolo de lo bonito que es tenerte en mi vida.
+      Gracias por cada momento, cada risa y cada vez que has estado ahí.
+      Espero que cuando veas este pequeño universo de flores recuerdes lo especial que eres para mí.
+      🌻💛
+    </p>
+    <div class="note">Con mucho cariño, para una amiga increíble.</div>
+  </div>
+</div>
+
+<div class="flowers">
+  <div class="flower"><div class="stem"></div><div class="leaf one"></div><div class="leaf two"></div><div class="head"><i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i><i class="petal p4"></i><i class="center"></i></div></div>
+  <div class="flower"><div class="stem"></div><div class="leaf one"></div><div class="leaf two"></div><div class="head"><i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i><i class="petal p4"></i><i class="center"></i></div></div>
+  <div class="flower"><div class="stem"></div><div class="leaf one"></div><div class="leaf two"></div><div class="head"><i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i><i class="petal p4"></i><i class="center"></i></div></div>
+  <div class="flower"><div class="stem"></div><div class="leaf one"></div><div class="leaf two"></div><div class="head"><i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i><i class="petal p4"></i><i class="center"></i></div></div>
+  <div class="flower"><div class="stem"></div><div class="leaf one"></div><div class="leaf two"></div><div class="head"><i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i><i class="petal p4"></i><i class="center"></i></div></div>
+</div>
+
+<script>
+const s=document.getElementById('stars');
+for(let i=0;i<70;i++){
+  const e=document.createElement('span'); e.className='star';
+  e.style.left=Math.random()*100+'%'; e.style.top=Math.random()*75+'%';
+  e.style.animationDelay=(Math.random()*3)+'s';
+  s.appendChild(e);
+}
+</script>
+</body>
+</html>
